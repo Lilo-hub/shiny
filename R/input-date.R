@@ -157,16 +157,15 @@ datePickerCssFile <- function() {
     return(list(href = "shared/datepicker", stylesheet = "css/bootstrap-datepicker3.min.css"))
   }
   scssDir <- system.file(package = "shiny", "www", "shared", "datepicker", "scss")
-  tmpDir <- tempfile("datepicker-scss")
-  dir.create(tmpDir)
+  tmpFile <- tempfile(fileext = ".css")
   bootstraplib::bootstrap_sass(
     list(
       bsThemeDateDefaults(),
       sass::sass_file(file.path(scssDir, "build3.scss"))
     ),
-    output = file.path(tmpDir, "custom.css")
+    output = tmpFile
   )
-  list(file = tmpDir, stylesheet = "custom.css")
+  list(file = dirname(tmpFile), stylesheet = basename(tmpFile))
 }
 
 
