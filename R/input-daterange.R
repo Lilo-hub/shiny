@@ -78,7 +78,7 @@
 dateRangeInput <- function(inputId, label, start = NULL, end = NULL,
     min = NULL, max = NULL, format = "yyyy-mm-dd", startview = "month",
     weekstart = 0, language = "en", separator = " to ", width = NULL,
-    autoclose = TRUE, ..., sassVars = list()) {
+    autoclose = TRUE) {
 
   start <- dateYMD(start, "start")
   end   <- dateYMD(end, "end")
@@ -129,6 +129,6 @@ dateRangeInput <- function(inputId, label, start = NULL, end = NULL,
         )
       )
     ),
-    datePickerDependencies(sassVars)
+    datePickerDependencies()
   )
 }

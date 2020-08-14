@@ -101,7 +101,6 @@ Suggests:
 URL: http://shiny.rstudio.com
 BugReports: https://github.com/rstudio/shiny/issues
 Collate:
-    'aaa_lib_versions.R'
     'app.R'
     'app_template.R'
     'bookmark-state-local.R'
